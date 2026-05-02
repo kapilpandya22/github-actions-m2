@@ -13,7 +13,7 @@ inputs:
   magento_version:
     description: 'Magento 2 Open Source version number'
     required: true
-    default: '2.4.8'
+    default: '2.4.9'
   project_name:
     description: 'Magento 2 project name'
     required: true
@@ -37,7 +37,7 @@ inputs:
     description: 'Relative path to an optional script after Magento installation is run. Leave empty to use the default.'
     required: false
   composer_version:
-    description: 'DEPREACATED. Composer v2 is now always used.'
+    description: 'DEPRECATED. Composer v2 is now always used.'
     required: false
     default: '2'
   block_insecure:

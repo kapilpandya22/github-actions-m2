@@ -15,7 +15,7 @@ inputs:
   magento_version:
     description: 'Magento 2 Open Source version number'
     required: true
-    default: '2.4.8'
+    default: '2.4.9'
   project_name:
     description: 'Magento 2 project name'
     required: true
