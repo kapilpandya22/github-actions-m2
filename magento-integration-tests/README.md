@@ -10,14 +10,14 @@ jobs:
     runs-on: ubuntu-latest
     services:
       mysql:
-        image: mysql:5.7
+        image: mysql:8.0
         env:
           MYSQL_ROOT_PASSWORD: root
         ports:
           - 3306:3306
         options: --tmpfs /tmp:rw --tmpfs /var/lib/mysql:rw --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
       es:
-        image: docker.io/wardenenv/elasticsearch:7.8
+        image: docker.io/wardenenv/elasticsearch:7.17
         ports:
           - 9200:9200
         env:
