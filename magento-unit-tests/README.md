@@ -9,9 +9,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
-      - uses: extdn/github-actions-m2/magento-unit-tests/7.3@master
+      - uses: extdn/github-actions-m2/magento-unit-tests/8.3@master
         env:
-          MAGENTO_VERSION: '2.3.4'
+          MAGENTO_VERSION: '2.4.7'
           MODULE_NAME: Foo_Bar
           COMPOSER_NAME: foo/magento2-foobar
 ```
@@ -30,15 +30,15 @@ jobs:
       COMPOSER_NAME: foo/magento2-foobar
     steps:
       - uses: actions/checkout@v6
-      - uses: extdn/github-actions-m2/magento-unit-tests/7.3@master
+      - uses: extdn/github-actions-m2/magento-unit-tests/8.3@master
         env:
-          MAGENTO_VERSION: '2.3.4'
-      - uses: extdn/github-actions-m2/magento-unit-tests/7.3@master
+          MAGENTO_VERSION: '2.4.7'
+      - uses: extdn/github-actions-m2/magento-unit-tests/8.3@master
         env:
-          MAGENTO_VERSION: '2.3.5-p2'
-      - uses: extdn/github-actions-m2/magento-unit-tests/7.4@master
+          MAGENTO_VERSION: '2.4.8'
+      - uses: extdn/github-actions-m2/magento-unit-tests/8.5@master
         env:
-          MAGENTO_VERSION: '2.4.0'
+          MAGENTO_VERSION: '2.4.9'
 ```
 
 Make sure to modify the following values:
@@ -47,4 +47,4 @@ Make sure to modify the following values:
 
 You could also choose to switch PHP version, by changing the tag of the Docker image:
 
-    - uses: extdn/github-actions-m2/magento-unit-tests/8.2@master
+    - uses: extdn/github-actions-m2/magento-unit-tests/8.5@master

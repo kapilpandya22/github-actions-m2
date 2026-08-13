@@ -27,12 +27,12 @@ jobs:
         options: --health-cmd="curl localhost:9200/_cluster/health?wait_for_status=yellow&timeout=60s" --health-interval=10s --health-timeout=5s --health-retries=3
     steps:
       - uses: actions/checkout@v6
-      - name: M2 Integration Tests with Magento 2 (Php7.4)
-        uses: extdn/github-actions-m2/magento-integration-tests/7.4@master
+      - name: M2 Integration Tests with Magento 2 (PHP 8.3)
+        uses: extdn/github-actions-m2/magento-integration-tests/8.3@master
         with:
           module_name: Foo_Bar
           composer_name: foo/magento2-foobar
-          magento_version: '2.4.0'
+          magento_version: '2.4.7'
 ```
 
 Make sure to modify the following values:
@@ -41,7 +41,7 @@ Make sure to modify the following values:
 
 You could also choose to switch PHP version, by changing the tag of the Docker image:
 
-    - uses: extdn/github-actions-m2/magento-integration-tests/7.3@master
+    - uses: extdn/github-actions-m2/magento-integration-tests/8.5@master
 
 Additionally, you can add an environment variable `MAGENTO_PRE_INSTALL_SCRIPT` to run a script, after composer is
 configured, but before the composer installation is run. Likewise, you can customize your PHPUnit procedure by supplying
