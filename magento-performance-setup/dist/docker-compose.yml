@@ -1,14 +1,14 @@
 version: "3.5"
 services:
   php-fpm:
-    image: quay.io/warden/php-fpm:${PHP_VERSION:-7.3}-magento2
+    image: quay.io/warden/php-fpm:${PHP_VERSION:-8.5}-magento2
     volumes:
       - ${GITHUB_WORKSPACE}:/var/www/html
     networks:
       default:
 
   php-blackfire:
-    image: quay.io/warden/php-fpm:${PHP_VERSION:-7.3}-magento2-blackfire
+    image: quay.io/warden/php-fpm:${PHP_VERSION:-8.5}-magento2-blackfire
     volumes:
       - ${GITHUB_WORKSPACE}:/var/www/html
     networks:

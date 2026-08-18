@@ -28,12 +28,6 @@ jobs:
       ELASTICSEARCH: 1
     steps:
       - uses: actions/checkout@v6
-      - uses: extdn/github-actions-m2/magento-integration-tests/7.3@master
-        env:
-          MAGENTO_VERSION: '2.3.7-p3'
-      - uses: extdn/github-actions-m2/magento-integration-tests/7.4@master
-        env:
-          MAGENTO_VERSION: '2.4.3-p2'
       - uses: extdn/github-actions-m2/magento-integration-tests/8.1@master
         env:
           MAGENTO_VERSION: '2.4.4'
