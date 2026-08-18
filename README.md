@@ -54,14 +54,14 @@ jobs:
     runs-on: ubuntu-latest
     services:
       mysql:
-        image: mysql:8.0
+        image: mysql:8.4
         env:
           MYSQL_ROOT_PASSWORD: root
         ports:
           - 3306:3306
         options: --tmpfs /tmp:rw --tmpfs /var/lib/mysql:rw --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
       es:
-        image: docker.io/wardenenv/elasticsearch:7.17
+        image: docker.io/wardenenv/elasticsearch:8.18
         ports:
           - 9200:9200
         env:
@@ -71,12 +71,12 @@ jobs:
         options: --health-cmd="curl localhost:9200/_cluster/health?wait_for_status=yellow&timeout=60s" --health-interval=10s --health-timeout=5s --health-retries=3
     steps:
       - uses: actions/checkout@v6
-      - name: M2 Integration Tests with Magento 2 (PHP 8.3)
-        uses: extdn/github-actions-m2/magento-integration-tests/8.3@master
+      - name: M2 Integration Tests with Magento 2 (PHP 8.5)
+        uses: extdn/github-actions-m2/magento-integration-tests/8.5@master
         with:
           module_name: Foo_Bar
           composer_name: foo/magento2-foobar
-          magento_version: '2.4.7'
+          magento_version: '2.4.9'
 ```
 
 The following images are provided for use
@@ -108,24 +108,24 @@ The default [phpunit.xml](https://github.com/extdn/github-actions-m2/blob/master
 If this phpunit file does not work for you can provide a relative path to your own PHPUnit file via phpunit_file
 
 ```
-      - name: M2 Integration Tests with Magento 2 (PHP 8.3)
-        uses: extdn/github-actions-m2/magento-integration-tests/8.3@master
+      - name: M2 Integration Tests with Magento 2 (PHP 8.5)
+        uses: extdn/github-actions-m2/magento-integration-tests/8.5@master
         with:
           module_name: Foo_Bar
           composer_name: foo/magento2-foobar
-          magento_version: '2.4.7'
+          magento_version: '2.4.9'
           phpunit_file: './path/to/phpunit.xml'
 ```
 
 Sometimes it may be needed to run additional commands before tests can run. For example to add or remove additional dependencies. Use the input magento_pre_install_script to provide a relative path to this script. Example
 
 ```
-      - name: M2 Integration Tests with Magento 2 (PHP 8.3)
-        uses: extdn/github-actions-m2/magento-integration-tests/8.3@master
+      - name: M2 Integration Tests with Magento 2 (PHP 8.5)
+        uses: extdn/github-actions-m2/magento-integration-tests/8.5@master
         with:
           module_name: Foo_Bar
           composer_name: foo/magento2-foobar
-          magento_version: '2.4.7'
+          magento_version: '2.4.9'
           magento_pre_install_script: './.github/integration-test-setup.sh'
 ```
 
@@ -209,7 +209,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
-      - uses: extdn/github-actions-m2/magento-phpstan/8.1@master
+      - uses: extdn/github-actions-m2/magento-phpstan/8.5@master
         with:
           composer_name: foo/magento2-foobar
 ```

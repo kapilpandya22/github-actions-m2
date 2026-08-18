@@ -9,9 +9,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
-      - uses: extdn/github-actions-m2/magento-unit-tests/8.3@master
+      - uses: extdn/github-actions-m2/magento-unit-tests/8.5@master
         env:
-          MAGENTO_VERSION: '2.4.7'
+          MAGENTO_VERSION: '2.4.9'
           MODULE_NAME: Foo_Bar
           COMPOSER_NAME: foo/magento2-foobar
 ```
@@ -32,10 +32,10 @@ jobs:
       - uses: actions/checkout@v6
       - uses: extdn/github-actions-m2/magento-unit-tests/8.3@master
         env:
-          MAGENTO_VERSION: '2.4.7'
-      - uses: extdn/github-actions-m2/magento-unit-tests/8.3@master
+          MAGENTO_VERSION: '2.4.7-p10'
+      - uses: extdn/github-actions-m2/magento-unit-tests/8.4@master
         env:
-          MAGENTO_VERSION: '2.4.8'
+          MAGENTO_VERSION: '2.4.8-p3'
       - uses: extdn/github-actions-m2/magento-unit-tests/8.5@master
         env:
           MAGENTO_VERSION: '2.4.9'
